@@ -5,7 +5,7 @@ export const site = {
   tagline: "Golosinas, juguetes y bebidas",
   description:
     "Golosinas, juguetes y bebidas sin alcohol. Comprá online y retirá gratis en nuestro local de Moreno centro o recibilo en tu casa.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://animate-golosineria.vercel.app",
   whatsapp: "5491176125358", // sin + ni espacios. Vacío = se oculta el botón.
   instagram: "", // ej: "https://instagram.com/animategolosineria"
 };
