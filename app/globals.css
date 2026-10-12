@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+  Design system Animate — paleta tomada del logo.
+  Regla de oro: el rosa "action" se usa SOLO en botones de compra.
+  Nunca texto blanco sobre el verde lima (no tiene contraste): usar texto "ink".
+*/
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-muted: #5f6b5f;
+  --color-line: #e6ebe4;
+
+  --color-brand: #6dbe4b;        /* verde lima del logo */
+  --color-brand-dark: #2e9e44;   /* borde verde del logo */
+  --color-brand-deep: #1f6e30;   /* textos verdes legibles */
+  --color-brand-soft: #eef8e8;
+
+  --color-action: #d6246e;       /* rosa sandía profundo: botones de compra */
+  --color-action-hover: #b81c5d;
+  --color-candy: #f062a0;        /* rosa del logo: ofertas y detalles */
+  --color-candy-soft: #ffe9f2;
+
+  --font-display: "Baloo 2 Variable", ui-rounded, system-ui, sans-serif;
+  --font-sans: "Nunito Variable", system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* Botón de compra: único elemento rosa sólido del sitio */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-action);
+  color: #fff;
+  font-weight: 800;
+  padding: 0.85rem 1.5rem;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-action:hover { background: var(--color-action-hover); }
+.btn-action:active { transform: scale(0.97); }
+.btn-action:disabled { background: #c9c9c9; cursor: not-allowed; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-brand-dark);
+  color: var(--color-brand-deep);
+  font-weight: 800;
+  padding: 0.75rem 1.4rem;
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: var(--color-brand-soft); }
+
+.container-shop {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .container-shop { padding-inline: 1.5rem; }
+}
+
+.prose-product p { margin-bottom: 0.75rem; }
+.prose-product ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
